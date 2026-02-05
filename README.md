@@ -56,3 +56,7 @@ pip install flask requests
 
 ### Failure Case (Service A Stopped)
 ![Failure Service A](screenshots/failure-service-a.png)
+
+###What Makes This Distributed?
+
+This system is distributed because it consists of two independent services running as separate processes that communicate over the network using HTTP. Each service has its own lifecycle: Service B continues running even when Service A is stopped and must handle partial failures using timeouts and error handling. Logging and failure isolation demonstrate core distributed system characteristics.
