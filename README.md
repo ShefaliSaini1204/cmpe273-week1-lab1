@@ -50,7 +50,7 @@ pip install flask requests
 ![Success Service A](screenshots/success-service-a.png)
 
 ### Success Case (Service B)
-![Success Service B](screenshots/success-service-b.png)
+![Success Service B](screenshots/sucess-service-b.png)
 
 ### Failure Case (Service A Stopped)
 ![Failure Service A](screenshots/failure-service-a.png)
