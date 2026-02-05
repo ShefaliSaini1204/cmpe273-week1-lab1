@@ -1,15 +1,11 @@
 # CMPE 273 – Week 1 Lab 1: Your First Distributed System
 
-Spring 2026
-
 ---
 
 ## Lab Goal
-Build a tiny locally distributed system with two independent services that communicate over the network, include basic logging, and demonstrate independent failure.
+Build a locally distributed system with two independent services that communicate over the network, include basic logging, and demonstrate independent failure.
 
 ---
-
-## What I Built
 
 ### Service A (Echo API) — Port 8080
 Endpoints:
@@ -39,7 +35,23 @@ git clone https://github.com/ShefaliSaini1204/cmpe273-week1-lab1
 cd cmpe273-week1-lab1/python-http
 python3 -m venv .venv
 source .venv/bin/activate
-pip install flask requests
+pip install flask requests```
 
 
 ### python service_a.py
+## Proof
+
+### Service A Running
+![Service A Running](screenshots/service-a.png)
+
+### Service B Running
+![Service B Running](screenshots/service-b.png)
+
+### Success Case (Service A)
+![Success Service A](screenshots/success-service-a.png)
+
+### Success Case (Service B)
+![Success Service B](screenshots/success-service-b.png)
+
+### Failure Case (Service A Stopped)
+![Failure Service A](screenshots/failure-service-a.png)
