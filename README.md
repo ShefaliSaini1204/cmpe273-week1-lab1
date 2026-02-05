@@ -1,26 +1,45 @@
-# CMPE 273 – Week 1 Lab 1: Your First Distributed System (Starter)
+# CMPE 273 – Week 1 Lab 1: Your First Distributed System
 
-This starter provides two implementation tracks:
-- `python-http/` (Flask + requests)
-- `go-http/` (net/http)
+Spring 2026
 
-Pick **one** track for Week 1.
+---
 
 ## Lab Goal
-Build **two services** that communicate over the network:
-- **Service A** (port 8080): `/health`, `/echo?msg=...`
-- **Service B** (port 8081): `/health`, `/call-echo?msg=...` calls Service A
+Build a tiny locally distributed system with two independent services that communicate over the network, include basic logging, and demonstrate independent failure.
 
-Minimum requirements:
-- Two independent processes
-- HTTP (or gRPC if you choose stretch)
-- Basic logging per request (service name, endpoint, status, latency)
-- Timeout handling in Service B
-- Demonstrate independent failure (stop A; B returns 503 and logs error)
+---
 
-## Deliverables
-1. Repo link
-2. README updates:
-   - how to run locally
-   - success + failure proof (curl output or screenshot)
-   - 1 short paragraph: “What makes this distributed?”
+## What I Built
+
+### Service A (Echo API) — Port 8080
+Endpoints:
+- `GET /health` → `{"status":"ok"}`
+- `GET /echo?msg=hello` → `{"echo":"hello"}`
+
+### Service B (Client Service) — Port 8081
+Endpoints:
+- `GET /health` → `{"status":"ok"}`
+- `GET /call-echo?msg=hello`
+  - Calls Service A `/echo`
+  - Uses a timeout when calling Service A
+  - Returns HTTP **503** if Service A is unavailable
+  - Logs request details and errors
+
+---
+
+## How to Run Locally (Python)
+
+### Prerequisites
+- Python 3.10+
+- Git
+
+### Setup
+```bash
+git clone https://github.com/ShefaliSaini1204/cmpe273-week1-lab1
+cd cmpe273-week1-lab1/python-http
+python3 -m venv .venv
+source .venv/bin/activate
+pip install flask requests
+
+
+### python service_a.py
