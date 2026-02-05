@@ -35,7 +35,8 @@ git clone https://github.com/ShefaliSaini1204/cmpe273-week1-lab1
 cd cmpe273-week1-lab1/python-http
 python3 -m venv .venv
 source .venv/bin/activate
-pip install flask requests```
+pip install flask requests
+```
 
 
 ### python service_a.py
